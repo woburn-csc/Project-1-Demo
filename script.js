@@ -21,13 +21,8 @@ async function run_model() {
 
   
   
-  let flip = true; // default for PC
-  // Detect iOS/Android and override flip
-  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-    flip = false; // front camera on phones is usually mirrored
-  }
-  // Initialize webcam
-  webcam = new tmImage.Webcam(400, 400, flip);
+  
+  webcam = new tmImage.Webcam(400, 400, false);
 
 
   
@@ -75,3 +70,4 @@ async function predict() {
   }
 
 }
+
