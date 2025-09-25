@@ -17,8 +17,22 @@ async function run_model() {
   model = await tmImage.load(modelURL, metadataURL);
   maxPredictions = model.getTotalClasses();
 
-  // Setup webcam
-  webcam = new tmImage.Webcam(400, 400, true);
+
+
+  
+  
+  let flip = true; // default for PC
+  // Detect iOS/Android and override flip
+  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+    flip = false; // front camera on phones is usually mirrored
+  }
+  // Initialize webcam
+  webcam = new tmImage.Webcam(400, 400, flip);
+
+
+  
+
+  
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   window.requestAnimationFrame(loop);
@@ -59,4 +73,5 @@ async function predict() {
 
     }
   }
+
 }
