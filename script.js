@@ -8,6 +8,20 @@ const startButton = document.getElementById("start-button")
 startButton.addEventListener('click', run_model)
 // Initialize the model and webcam
 
+/* Storing user's device details in a variable*/
+let details = navigator.userAgent;
+
+/* Creating a regular expression 
+containing some mobile devices keywords 
+to search it in details string*/
+let regexp = /android|iphone|kindle|ipad/i;
+
+/* Using test() method to search regexp in details
+it returns boolean value*/
+let isMobileDevice = regexp.test(details);
+
+
+
 const modelBox = document.getElementById("model-box");
 async function run_model() {
   const modelURL = URL + "model.json";
@@ -19,18 +33,7 @@ async function run_model() {
 
 
 
-    /* Storing user's device details in a variable*/
-  let details = navigator.userAgent;
-  
-  /* Creating a regular expression 
-  containing some mobile devices keywords 
-  to search it in details string*/
-  let regexp = /android|iphone|kindle|ipad/i;
-  
-  /* Using test() method to search regexp in details
-  it returns boolean value*/
-  let isMobileDevice = regexp.test(details);
-  
+ 
   
   webcam = new tmImage.Webcam(400, 400, !isMobileDevice);
 
@@ -80,5 +83,6 @@ async function predict() {
   }
 
 }
+
 
 
