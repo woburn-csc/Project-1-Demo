@@ -70,7 +70,7 @@ async function predict() {
   for (let i = 0; i < maxPredictions; i++) {
     const name = prediction[i].className;
     const probability = prediction[i].probability.toFixed(2);
-    const classPrediction = `${name}: ${probability}`;
+    const classPrediction = `-${name}: ${probability}`;
     labelContainer.childNodes[i].innerHTML = classPrediction + '\n';
     if (prediction[i].probability > 0.7) {
       labelContainer.childNodes[i].style.color = " rgb(0, 255, 128)";
@@ -83,6 +83,7 @@ async function predict() {
   }
 
 }
+
 
 
 
