@@ -1,0 +1,55 @@
+:root {
+  --light-blue: #46ffe4;
+  --dark-blue: #150459;
+  --green: #00ff03;
+}
+
+div {
+  color: white;
+  text-align: center;
+}
+
+#start-button {
+  background: rgb(21, 50, 177);
+  /* blue gradient */
+  color: white;
+  font-size: 20px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  font-family: 'Trebuchet MS';
+  margin-bottom: 30px;
+}
+
+#start-button:hover {
+  transform: translateY(-3px);
+  /* lifts button */
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+#start-button:active {
+  transform: translateY(1px);
+  /* press effect */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+#header-title {
+  color: #84d8ff;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Trebuchet MS';
+}
+
+
+.labels {
+  color: rgb(177, 237, 255);
+  font-size: 50px;
+  padding: 12px 30px;
+  font-family: 'Trebuchet MS';
+}
